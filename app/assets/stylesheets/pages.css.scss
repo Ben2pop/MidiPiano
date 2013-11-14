@@ -1,0 +1,25 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+
+body, html {
+  height: 100%;
+}
+
+#homecontenair{
+  margin-top: 0px;
+  padding:0;
+	 background: url(Old-Piano.png) no-repeat center fixed; 
+  -webkit-background-size: cover; /* pour Chrome et Safari */
+  -moz-background-size: cover; /* pour Firefox */
+  -o-background-size: cover; /* pour Opera */
+  background-size: cover; /* version standardisée */
+  height: 100%;
+
+}
+
+#homecontent{
+	padding-top:50px;
+}
