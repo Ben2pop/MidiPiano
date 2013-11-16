@@ -11,7 +11,7 @@ body, html {
 #homecontenair{
   margin-top: 0px;
   padding:0;
-	 background: url(bg.png) no-repeat center fixed; 
+	 background: image_path('bg.png') no-repeat center fixed; 
   -webkit-background-size: cover; /* pour Chrome et Safari */
   -moz-background-size: cover; /* pour Firefox */
   -o-background-size: cover; /* pour Opera */
@@ -51,7 +51,7 @@ text-align: center;
 	border: 1px solid red;
 	-moz-border-radius: 4px;
     border-radius: 4px;
-    background-image: url(raf.jpg);
+    background-image: image_path('raf.jpg');
     color: white;
     height: 105px;
     
