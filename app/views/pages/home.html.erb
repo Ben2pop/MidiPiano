@@ -3,7 +3,7 @@
 		<div class="jumbotron">
   			<h1>Welcome at Middiz.com</h1>
   			<p>Find the best midi piano file to learn and share your art ! </p>
- 			 <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+ 			 <p> <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
 		</div>	
 	</div>
 </div>
@@ -35,10 +35,10 @@
 			<div class="col-md-6" ><h3>Join us and discover great piano pieces!</h3>
 			</div>
 	
-			<div class="col-md-3  col-md-offset-1"><a class="btn btn-primary btn-lg" role="button">Become a member</a>
+			<div class="col-md-3  col-md-offset-1"><%= link_to "Become a member", new_user_registration_path, class: "btn btn-primary btn-lg" %>
 		    </div>
 
-			<div class="col-md-2"><a class="btn btn-default btn-lg" role="button">Log in</a></div>	
+			<div class="col-md-2"><%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %></div>	
 		</div>
 	</div>
 </div>
