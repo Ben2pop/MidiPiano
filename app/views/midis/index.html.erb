@@ -1,0 +1,29 @@
+<h1>Listing midis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @midis.each do |midi| %>
+      <tr>
+        <td><%= midi.title %></td>
+        <td><%= midi.author %></td>
+        <td><%= link_to 'Show', midi %></td>
+        <td><%= link_to 'Edit', edit_midi_path(midi) %></td>
+        <td><%= link_to 'Destroy', midi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Midi', new_midi_path %>

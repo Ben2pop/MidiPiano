@@ -1,0 +1,25 @@
+<%= form_for(@midi) do |f| %>
+  <% if @midi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@midi.errors.count, "error") %> prohibited this midi from being saved:</h2>
+
+      <ul>
+      <% @midi.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
