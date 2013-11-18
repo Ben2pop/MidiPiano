@@ -26,39 +26,30 @@ class MidisController < ApplicationController
   def create
     @midi = Midi.new(midi_params)
 
-    respond_to do |format|
       if @midi.save
-        format.html { redirect_to @midi, notice: 'Midi was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @midi }
+        redirect_to @midi, notice: 'Midi was successfully created.'
       else
-        format.html { render action: 'new' }
-        format.json { render json: @midi.errors, status: :unprocessable_entity }
+        render action: 'new'
+       
       end
-    end
   end
+ 
 
-  # PATCH/PUT /midis/1
-  # PATCH/PUT /midis/1.json
+
   def update
-    respond_to do |format|
       if @midi.update(midi_params)
-        format.html { redirect_to @midi, notice: 'Midi was successfully updated.' }
-        format.json { head :no_content }
+        redirect_to @midi, notice: 'Midi was successfully updated.' 
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @midi.errors, status: :unprocessable_entity }
+        render action: 'edit' 
       end
-    end
   end
 
-  # DELETE /midis/1
-  # DELETE /midis/1.json
+  
   def destroy
     @midi.destroy
-    respond_to do |format|
-      format.html { redirect_to midis_url }
-      format.json { head :no_content }
-    end
+   
+      redirect_to midis_url
+      
   end
 
   private
