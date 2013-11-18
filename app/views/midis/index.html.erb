@@ -5,6 +5,7 @@
     <tr>
       <th>Title</th>
       <th>Author</th>
+      <th>Mail</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= midi.title %></td>
         <td><%= midi.author %></td>
+        <td><%= midi.user.email if midi.user %></td>
         <td><%= link_to 'Show', midi %></td>
         <td><%= link_to 'Edit', edit_midi_path(midi) %></td>
         <td><%= link_to 'Destroy', midi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,5 +27,6 @@
 </table>
 
 <br>
-
+<% if user_signed_in? %>
 <%= link_to 'New Midi', new_midi_path %>
+<% end %>

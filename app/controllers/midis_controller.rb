@@ -1,5 +1,6 @@
 class MidisController < ApplicationController
   before_action :set_midi, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /midis
   # GET /midis.json
@@ -14,7 +15,7 @@ class MidisController < ApplicationController
 
   # GET /midis/new
   def new
-    @midi = Midi.new
+    @midi = current_user.midis.build
   end
 
   # GET /midis/1/edit
@@ -24,7 +25,7 @@ class MidisController < ApplicationController
   # POST /midis
   # POST /midis.json
   def create
-    @midi = Midi.new(midi_params)
+    @midi = current_user.midis.build(midi_params)
 
       if @midi.save
         redirect_to @midi, notice: 'Midi was successfully created.'
@@ -56,6 +57,11 @@ class MidisController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_midi
       @midi = Midi.find(params[:id])
+    end
+
+    def correct_user
+      @midi = current_user.midis.find_by(id: params[:id])
+      redirect_to midi_path, notice: "Not authorized to edit this pin" if @midi.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
