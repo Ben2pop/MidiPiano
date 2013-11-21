@@ -1,14 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @midi.title %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @midi.author %>
-</p>
-
-<%= link_to 'Edit', edit_midi_path(@midi) %> |
+<div class="container">
 <%= link_to 'Back', midis_path %>
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading center">
+        <%= image_tag @midi.image.url(:medium) %>
+      </div>
+      <div class="panel-body">
+        <p><%= @midi.author %></p>
+        <p><%= @midi.title %></p>
+        <p><strong><%= @midi.user.email if @midi.user %></strong></p>
+
+        <% if @midi.user == current_user %>
+        <%= link_to edit_midi_path(@midi) do %>
+        <span class="glyphicon glyphicon-edit"></span>
+        Edit
+      <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

@@ -12,9 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require masonry/jquery.masonry
 // Loads all Bootstrap javascripts
 //= require bootstrap
 //= require turbolinks
+//= require jquery.turbolinks
 //= require_tree .
 
 

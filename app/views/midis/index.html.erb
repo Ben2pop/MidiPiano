@@ -1,32 +1,27 @@
-<h1>Listing midis</h1>
+<div class="container">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Mail</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @midis.each do |midi| %>
-      <tr>
-        <td><%= midi.title %></td>
-        <td><%= midi.author %></td>
-        <td><%= midi.user.email if midi.user %></td>
-        <td><%= link_to 'Show', midi %></td>
-        <td><%= link_to 'Edit', edit_midi_path(midi) %></td>
-        <td><%= link_to 'Destroy', midi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div id="pins" class="transitions-enabled">
+      <% @midis.each do |midi| %>
+        <div class="box panel panel-default">
+         <%= link_to image_tag(midi.image.url(:thumb)), midi %>
+          <div class="panel-body">
+            <p><%= midi.author %></p>
+            <p><%= midi.title %></p>
+        
+              <% if midi.user == current_user %>
+              <%= link_to edit_midi_path(midi) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %>
+            <%= link_to midi, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
-<br>
-<% if user_signed_in? %>
-<%= link_to 'New Midi', new_midi_path %>
-<% end %>
+</div>

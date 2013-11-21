@@ -4,6 +4,9 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 gem 'devise', '~> 3.1.1'
+gem 'paperclip', '~> 3.0'
+gem 'jquery-turbolinks'
+gem 'masonry-rails', '~> 0.2.0'
 
 
 # Use sqlite3 as the database for Active Record

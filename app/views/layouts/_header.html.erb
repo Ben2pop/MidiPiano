@@ -17,6 +17,11 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
+          <li>
+            <%= link_to new_midi_path do %>
+              <span class="glyphicon glyphicon-plus"></span> Add New Middiz
+            <% end %>
+          </li>
           <li><%= link_to "Account Settings", edit_user_registration_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>

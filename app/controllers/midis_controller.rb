@@ -66,6 +66,6 @@ class MidisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def midi_params
-      params.require(:midi).permit(:title, :author)
+      params.require(:midi).permit(:title, :author, :image)
     end
 end
