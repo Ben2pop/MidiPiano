@@ -1,9 +1,12 @@
+
 <div id="homecontenair">
 	<div id="homecontent" class="col-md-6 col-md-offset-3">
 		<div class="jumbotron">
-  			<h1>Welcome at Middiz.com</h1>
-  			<p>Find the best midi piano file to learn and share your art ! </p>
- 			 <p> <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+  			<h1 id="title">Welcome at Middiz.com</h1>
+  			<p>Find the best midi piano file to learn and share your art ! </p><br>
+ 			 <p> <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>&nbsp 
+ 			     <%= link_to "Log-in", new_user_session_path, class: "btn btn-success btn-lg" %>
+ 			 </p>
 		</div>	
 	</div>
 </div>
@@ -13,7 +16,7 @@
   <div class:"container">
 	<div class="col-md-4" id="icone">
 	    <%= image_tag "download.png",{height: 70}%>
-	    <div id="textcontent"><h4>Download the best midi piano pieces</h4></div>
+	    <div id="textcontent"><h4>Download the best midi piano pieces and play piano without knowing how to read music sheets</h4></div>
 	</div>
 	
 	<div class="col-md-4" id="icone">
@@ -31,8 +34,8 @@
 
 <div id="joinus">
 	<div class="container" id="try">
-	  <div id="margin">
-			<div class="col-md-6" ><h3>Join us and discover great piano pieces!</h3>
+	  <div id="margin"> 
+			<div class="col-md-6" id="joindiscover">Join us and discover great piano pieces !
 			</div>
 	
 			<div class="col-md-3  col-md-offset-1"><%= link_to "Become a member", new_user_registration_path, class: "btn btn-primary btn-lg" %>

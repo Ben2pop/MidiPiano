@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131118191614) do
+ActiveRecord::Schema.define(version: 20131121134200) do
 
   create_table "midis", force: true do |t|
     t.string   "title"
@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(version: 20131118191614) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "middiz_file_name"
+    t.string   "middiz_content_type"
+    t.integer  "middiz_file_size"
+    t.datetime "middiz_updated_at"
   end
 
   add_index "midis", ["user_id"], name: "index_midis_on_user_id"

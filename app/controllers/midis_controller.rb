@@ -1,6 +1,7 @@
 class MidisController < ApplicationController
   before_action :set_midi, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /midis
   # GET /midis.json
@@ -66,6 +67,6 @@ class MidisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def midi_params
-      params.require(:midi).permit(:title, :author, :image)
+      params.require(:midi).permit(:title, :author, :image, :middiz)
     end
 end

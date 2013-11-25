@@ -3,7 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "bootstrap";
-
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Sonsie+One);
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script:700,400);
 body, html {
   height: 100%;
   padding-top:25px;
@@ -18,17 +21,30 @@ body, html {
   -o-background-size: cover; /* pour Opera */
   background-size: cover; /* version standardisée */
   height: 100%;
+  font-family: 'Droid Sans', sans-serif;
 
+}
+
+.navbar {
+   font-family: 'Droid Sans', sans-serif;
+}
+
+#title{
+ font-family: 'Dancing Script', cursive;
+  text-shadow: 1px 1px  2px black;
 }
 
 #homecontent{
 	padding-top:150px;
-	text-align: center;	
+	text-align: center;
+
+
 }
 
 #secondcontent{
 height: 200px;
 text-align: center;
+
 }
 
 #icone{
@@ -37,14 +53,14 @@ text-align: center;
 
 #textcontent{
 	padding-top: 20px;
+  font-family: 'Droid Sans', sans-serif;
+
 }
 
 #joinus{
 	text-align: center;
 	margin-top:30px;
-
-
-
+  
 }
 
 #try{
@@ -68,6 +84,13 @@ height: 70px;
 
 #border{
 	border: 1px solid red;
+}
+
+#joindiscover{
+ font-family: 'Droid Sans', sans-serif;
+ font-size: 25px;
+ text-shadow: 1px 1px  2px black;
+ padding-top: 5px;
 }
 
 #margin{
@@ -95,5 +118,26 @@ margin: 0 auto;
 
 .container{
   min-height: 100%;
+}
+
+#back{
+  text-align: right;
+}
+
+#intheshow{
+  margin-top: 3%;
+
+}
+
+#showtime{
+  background-color: white;
+  -moz-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 15px #888888;
+
+}
+
+#indexmidi{
+  margin-top: 30px;
 }
 

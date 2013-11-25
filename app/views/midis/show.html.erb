@@ -1,26 +1,45 @@
 <div class="container">
-<%= link_to 'Back', midis_path %>
-<div class="row">
-  <div class="col-md-offset-2 col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-heading center">
-        <%= image_tag @midi.image.url(:medium) %>
-      </div>
-      <div class="panel-body">
-        <p><%= @midi.author %></p>
-        <p><%= @midi.title %></p>
-        <p><strong><%= @midi.user.email if @midi.user %></strong></p>
+     
 
-        <% if @midi.user == current_user %>
-        <%= link_to edit_midi_path(@midi) do %>
-        <span class="glyphicon glyphicon-edit"></span>
-        Edit
-      <% end %>
-        <% end %>
+	<div class="row jumbotron" id="intheshow">
+  		
+  		<div class="col-md-offset-2 col-md-8" id="showtime" >
+    		
+    		    <div class="row">
+	      			
+	      			    <div class="col-md-5">
 
-      </div>
-    </div>
-  </div>
-</div>
+	      						<div class="panel-heading center">
+				        			<%= image_tag @midi.image.url(:medium) %>
+				        		</div>
+				        
+				        </div>
+
+				        <div class="col-md-6" >
+                            <div class="panel-heading center">
+				        		
+	                            <p><h3><%= @midi.author %></h3></p>
+				                <p><%= @midi.title %></p>
+				                <%= link_to  @midi.middiz.url do %>
+				                <span class="glyphicon glyphicon-cloud-download"></span>Download the midi
+				                <% end %>
+				                <p><strong><%= @midi.user.email if @midi.user %></strong></p>
+
+				                <% if @midi.user == current_user %>
+						            <%= link_to edit_midi_path(@midi) do %>
+						            <span class="glyphicon glyphicon-edit"></span>Edit
+						            <% end %>
+				                <% end %>
+	                        </div>
+	                    </div>
+	               
+                
+            </div>
+        </div>
+	</div>
+
+	<div id="back">
+        <%= link_to 'Back', midis_path, class: "btn btn-primary" %>
+	</div>
 
 </div>
